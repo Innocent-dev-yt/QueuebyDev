@@ -24,6 +24,11 @@ dependencies {
 
     compileOnly("org.spongepowered:configurate-yaml:4.0.0")
 
+    compileOnly("me.TechsCode:FakeUltraPerms:1.0.2")
+    compileOnly("net.luckperms:api:5.4")
+    compileOnly(fileTree(mapOf("dir" to "../libs/private", "include" to listOf("*.jar"))))
+    compileOnly(fileTree(mapOf("dir" to "../libs/public", "include" to listOf("*.jar"))))
+
     implementation(project(":api"))
 }
 

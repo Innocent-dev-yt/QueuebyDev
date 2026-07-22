@@ -161,20 +161,17 @@ allow-group-requeue: false
 # What priority should we give whitelisted players priority when the server is whitelisted?
 # This will have no effect if the server isn't whitelisted
 # If you set to 0, this will be disabled
-# If you have the free version, set it to 1 to enable
 give-whitelisted-players-priority: 0
 
 # What priority should we give players that are able to bypass paused priority when the server is paused?
 # This will have no effect if the server isn't paused
 # If you set to 0, this will be disabled
-# If you have the free version, set it to 1 to enable
 give-pausedbypass-players-priority: 0
 
 # What priority should we give players that are able to bypass full servers priority when the server is full?
 # This will have no effect if the server isn't full
 # If you are using make-room, this also applies to that
 # If you set to 0, this will be disabled
-# If you have the free version, set it to 1 to enable
 give-fulljoin-players-priority: 0
 
 
@@ -194,11 +191,11 @@ enable-server-command: false
 # For example, if survival is in this list, then if a player executes /survival
 #  then they will be put in the queue for survival
 # This works for both servers and groups
-# If you have ajQueuePlus, you can also make aliases.
+# You can also make aliases for servers or groups.
 #  For example, if you have a server called lobby, and you want people to be able to use /hub, you can use this:
 #   - "hub:lobby"
-#  If you have the free version, you can only put the server name, no aliases.
-slash-servers: []
+slash-servers:
+  - "hub:lobbys"
 
 # Should we enable /send as an alias for /ajQueue send?
 # If on bungeecord, this requires extra setup (same as replacing the server command but with send instead)
@@ -213,7 +210,7 @@ enable-send-alias: false
 enable-priority-messages: false
 
 # Messages we send to players with priority queue when they join the queue
-# In the free version, "priority" is 1.
+# Configure the message format for each priority level.
 # The * will send when a player joins with any priority.
 # The format is <priority>:<message>
 # Example: 1:You have a priority of 1!

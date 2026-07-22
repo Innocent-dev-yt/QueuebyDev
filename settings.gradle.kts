@@ -1,4 +1,4 @@
-rootProject.name = "ajQueue"
+rootProject.name = "QueuebyDev"
 
 include(":api")
 include(":common")
@@ -9,4 +9,3 @@ include(":platforms:velocity")
 include(":platforms:bungeecord")
 
 include(":free")
-include(":premium")

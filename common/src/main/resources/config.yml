@@ -247,7 +247,6 @@ send-fail-debug: false
 # The actionbar contains some info such as which server they are queued for, what position they are in, estimated time remaining, etc.
 send-actionbar: true
 
-# THIS FEATURE IS ONLY AVAILABLE ON ajQueuePlus (https://www.spigotmc.org/resources/ajqueueplus.79123/)
 # This will show players a different name than the actual proxy server name
 # for example, instead of showing players "event-a", this option can make it appear as "Event A"
 # With this example, you would use this: - "event-a:Event A"

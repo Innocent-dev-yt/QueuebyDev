@@ -21,9 +21,21 @@ public class SlashServerManager {
         serverCommands.forEach(implementation::unregisterCommand);
         serverCommands.clear();
 
+        if(main.getConfig().getBoolean("enable-hub-command")) {
+            String hubTarget = main.getConfig().getString("hub-target");
+            List<String> hubAliases = main.getConfig().getStringList("hub-aliases");
+            if(hubTarget != null && !hubTarget.isEmpty() && hubAliases != null) {
+                for(String alias : hubAliases) {
+                    SlashServerCommand hubCommand = new SlashServerCommand(main, alias, hubTarget);
+                    serverCommands.add(hubCommand);
+                    implementation.registerCommand(hubCommand);
+                }
+            }
+        }
+
         List<String> slashServerServers = main.getConfig().getStringList("slash-servers");
         for(String rawServer : slashServerServers) {
-            if(rawServer.contains(":") && main.isPremium()) {
+            if(rawServer.contains(":")) {
                 String[] parts = rawServer.split(":");
                 String command = parts[0];
                 String server = parts[1];

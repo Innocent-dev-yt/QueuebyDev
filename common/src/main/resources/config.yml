@@ -187,6 +187,21 @@ remove-player-on-server-switch: false
 #  Default: false
 enable-server-command: false
 
+# Should we enable dedicated /hub and /lobby commands?
+# When set to true, players anywhere on the proxy can use /hub, /lobby, etc.
+# to automatically queue for the specified target server or server group.
+# Runs directly on the Proxy (BungeeCord / Velocity) without requiring any backend plugin!
+#  Default: true
+enable-hub-command: true
+
+# Target server or queue group name for the hub/lobby commands
+hub-target: "lobbys"
+
+# Commands that will send the player to the hub-target queue
+hub-aliases:
+  - "hub"
+  - "lobby"
+
 # What servers should we make slash server commands for?
 # For example, if survival is in this list, then if a player executes /survival
 #  then they will be put in the queue for survival
@@ -194,8 +209,7 @@ enable-server-command: false
 # You can also make aliases for servers or groups.
 #  For example, if you have a server called lobby, and you want people to be able to use /hub, you can use this:
 #   - "hub:lobby"
-slash-servers:
-  - "hub:lobbys"
+slash-servers: []
 
 # Should we enable /send as an alias for /ajQueue send?
 # If on bungeecord, this requires extra setup (same as replacing the server command but with send instead)
